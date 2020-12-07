@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //make a function that can create arange of a and y with array.from
+        const range = Array.from({ length: 10 }, function () {
+            return 'vir';                      // it will print vir 10 times
+        })
+
+
+        function createrange(start, end) {
+            const range = Array.from({ length: end - start + 1 }, function (item, index) {
+                return index + start;                      // if we give input 3,7  it give ouput 3,4,5,6,7
+            })
+            return range;
+        }
+
+        //chech wheather the array is array or not
+
+        const myarray = createrange(3, 7)
+        console.log(Array.isArray(myarray)); // it give true as output
+
+
+        //check the meat object and make the  three array
+        const meat = {
+            'beyond': 10,
+            'beef': 5,
+            'pork': 7
+        }
+        console.log(Object.entries(meat));
+        console.log(Object.keys(meat));                // name
+        console.log(Object.values(meat));             //10,5,7 in array form
+
+        Object.entries(meat).forEach(([key, value]) => {              // 10,5,7
+            // const key = entry[0];
+            // const value = entry[1];      it is also same if we not write [key,value]
+            //const [key,value] = entry;     is also same as above to
+            console.log(key, value);
+        });
+
+        ////////// instance method  ////////////
+
+        //Display all buns type with or
+        const buns = [
+            'egg',
+            'wonder',
+            'brioche',
+            'vir',          // vir is for pop function explanation
+        ]
+        console.log(buns.join(' or '));  // it join each item with or
+
+
+        //we have string and use split() to convert to array
+        const foodstring = "hot dogs ,hamburger,sausages,corn"
+        console.log(foodstring.split(','));      //["hot dogs ", "hamburger", "sausages", "corn"]
+
+
+        //take off the last item from array use pop()
+        console.log(buns.pop());  // it remove vir from buns
+
+
+        //add vir back to buns  use push
+        console.log(buns.push('vir'));
+
+
+        //take the first item off from array and use shift()
+        const first = buns.shift();
+        console.log(first);           // remove egg
+
+
+        //add back to it
+        console.log(buns.unshift(first));
+
+
+        // make a copy of buns array with a spread
+        const newbuns = [...buns];
+
+
+        //find the index of the vir
+        const myindex = buns.indexOf('vir')
+        console.log(myindex);
+
+
+        //chech that cat is in the buns
+        const check = buns.includes('cat')
+        console.log(check);                    // false
+
+
+        //add if cat is not their
+        if (!check) {
+            console.log(buns.push('cat'));
+        }
+
+
+        //reverse the buns
+        const reve = [...buns].reverse();
+        console.log(reve);
+
+
+        /////////////////////////////////////CALL-BACK METHOD//////////////////////////////////////////////
+
+        const feedback = [
+            { comment: 'love burgs', rating: 4 },
+            { comment: 'horrible service', rating: 2 },
+            { comment: 'great', rating: 5 },
+            { comment: 'need work', rating: 3 },
+            { comment: 'I dont like burgs', rating: 1 },
+        ]
+
+        //find the first rating that talks about burgs
+        const burgsrating = feedback.find(rating => rating.comment.includes('burg'));
+        console.log(burgsrating);
+
+
+        //find all rating above 2 using filter()
+        const good = feedback.filter(review => {
+            if (review.rating >= 2) {
+                return true;
+            }
+            else {
+                return false;
+            }
+        });
+        console.table(good);
+
+
+        //find all the rating that talk about burgs
+        const burgsrat = feedback.filter(burg => burg.comment.includes('burgs'));
+        console.table(burgsrat)
+
+
+        //remove 1  star rating of any of 
+        const legirating = feedback.filter(single => single.comment.rating !== 1)
+        console.table(legirating)
+
+
+        //sorting the number usind the short fuction
+        const number = [1, 2, 100, 3, 45, 400, 189];
+        const sorted = number.sort((first, second) => first - second);    //fun(first,second){return first-second}
+        console.log(sorted);
+
+        const number1 = ['a', 'g', 'n', 'c', 'r', 'j', 'z', 'x'];
+        const sort = number1.sort();
+        console.log(sort);
+
+
+        //sort meat by quantity
+
+        const sortbyqty = Object.entries(meat).sort(function (a, b) {
+            const aqty = a[1];
+            const bqty = b[1];
+            return aqty - bqty;
+        });
+        console.table(sortbyqty);
+
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>

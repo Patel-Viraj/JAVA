@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <ul class="prize"></ul>
+    <script>
+        // .set()
+
+        const mymap = new Map();
+        mymap.set('name', 'wes');
+        mymap.set(100, 'this is a number')
+        console.log(mymap);
+
+        const score = 100;
+        const prizes = new Map();
+        prizes.set(100, 'duck');
+        prizes.set(200, 'bear')
+        prizes.set(300, 'car');
+        console.log(`you win a ${prizes.get(score)}`);
+
+        //select that ul
+        const ul = document.querySelector('.prize');
+        for (const [points, prize] of prizes) {
+            const li = `<li> ${points}-${prize}</li>`
+            ul.insertAdjacentHTML('beforebegin', li)
+        }
+        // .has()
+        // .delete()
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+
+        const topping = ['mushroom',
+            'tomato', 'eggs', 'chili', 'avacado', 'cheese', 'onion', 'pickles']
+
+        const students = [
+            {
+                id: '11ce',
+                first_name: 'dull',
+                last_name: 'puckring',
+            },
+            {
+                id: '2958',
+                first_name: 'vir',
+                last_name: 'pat',
+            },
+            {
+                id: '565a',
+                first_name: 'mon',
+                last_name: 'kum',
+            },
+            {
+                id: '1a23',
+                first_name: 'asd',
+                last_name: 'dsa',
+            },
+            {
+                id: 'f345',
+                first_name: 'flory',
+                last_name: 'duck',
+            },
+            {
+                id: 'k765',
+                first_name: 'nill',
+                last_name: 'stom',
+            },
+            {
+                id: '987df',
+                first_name: 'kill',
+                last_name: 'minner',
+            },
+        ];
+
+        const buns = ['eggs', 'wonder', 'brioche'];
+
+        const meats = {
+            beyond: 10,
+            beef: 5,
+            pork: 6
+        };
+
+        const price = {
+            hotdog: 453,
+            burger: 765,
+            corn: 123
+        }
+
+        const feedback = [
+            { comment: 'love burgs', rating: 4 },
+            { comment: 'horrible service', rating: 2 },
+            { comment: 'great', rating: 5 },
+            { comment: 'need work', rating: 3 },
+            { comment: 'I dont like burgs', rating: 1 },
+        ];
+
+        const face = ['@', '!', '$', '#', '&',];
+        ////////////////////////////////////     LOOPING METHODS    /////////////////////////////
+
+
+
+        function logtopping(topping, index, orignalarray) {        // foreach(topping => { console.log(topping)})
+            //log the topping
+            console.log(topping, index);
+
+            //log the previous topping if there is one
+            const prevtopping = orignalarray[index - 1];
+            prevtopping ? console.log(prevtopping) : null;
+
+            //log the next topping if there is one
+            const nexttopping = orignalarray[index + 1];
+            nexttopping ? console.log(nexttopping) : null;        // it is if loop
+
+            // foreach(topping => { console.log(topping)})
+            console.log(orignalarray[index + 1]);
+
+            //if it is the last item said good bye
+            index === orignalarray.length - 1 ? console.log('GOODBYE') : console.log('--------');;
+
+        }
+        topping.forEach(logtopping)
+
+
+        //////////////////////  MAP , FILTER , REDUCE ////////////////////////////////////////
+
+
+        console.clear()
+        //type 1
+        function addarms(face) {
+            console.log(`hii ${face} hii`);
+        }
+        const toy = face.map(addarms)
+        console.log(toy);
+
+
+        //type2
+        function boss(name) {
+            return `${name} good `;
+        }
+        function capital(word) {
+            return word[0].toUpperCase() + word.slice(1);
+        }
+        const fullname = ['vier', 'asd', 'dsa'].map(capital).map(boss);
+        console.log(fullname);
+
+
+        //type3
+        Array(3).fill('$').join('  ')      // "$  $  $"    // fill function will fill the array 3 place with $ and join
+        // will give the space between them 
+
+
+        //type4
+
+        const data = [
+            {
+                birthday: 'octomber 17,1972',
+                names: {
+                    first_name: 'nill',
+                    last_name: 'stom',
+                }
+            },
+            {
+                birthday: 'jan 12,1999',
+                names: {
+                    first_name: 'asd',
+                    last_name: 'tom',
+                }
+            },
+            {
+                birthday: 'aug 30,2004',
+                names: {
+                    first_name: 'ill',
+                    last_name: 'st',
+                }
+            },
+            {
+                birthday: 'nov 1,1954',
+                names: {
+                    first_name: 'ni',
+                    last_name: 'om',
+                }
+            },
+        ]
+
+        const cleanpeople = data.map(function (data) {
+            console.log(data);
+            const birthday = new Date(data.birthday).getTime();
+            const now = Date.now();
+            const age = (now - birthday) / 31536000000;   //3153.. is 1000*60*60*24*365
+
+
+            return {
+                age,
+                name: `${data.names.first_name} ${data.names.last_name}`
+            }
+        });
+        console.table(cleanpeople)
+        //get the birhtday
+        //figure out how old he is
+        //reutrn thier full name and birhtday
+
+        const ageover = cleanpeople.filter(person => person.age > 40);
+        console.table(ageover);
+
+        //  type
+        const stud = students.find(s => s.id === 'f345')
+        console.log(stud);
+
+        //  type
+        function findbyprop(id, value) {
+            return function find(student) {
+                return student.id === value;
+            }
+        }
+        const asd = students.find(findbyprop('id', '565a'));
+        console.log(asd);
+
+
+
+        //////////////////////////////////////         REDUCE       ///////////////////////////////////////////
+
+
+        console.clear()
+
+        const ordertotals = [12, 34, 45, 2, 345, 4567, 754];
+
+        let total = 0;
+        ordertotals.forEach(singletotal => {
+            total = total + singletotal;
+        })
+        console.log(total);
+
+        function full(no, currenttotal) {
+            console.log(`the no is ${currenttotal}`);
+            console.log(`the current total is ${no}`);
+            console.log('---------');
+            return no + currenttotal;
+        }
+        const allorder = ordertotals.reduce(full, 0)
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>

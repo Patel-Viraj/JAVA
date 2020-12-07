@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        console.log('starting');
+        setTimeout(function () {
+            console.log('Done');
+        }, 2000);   // it take time of 2 sec to run done but rest of the script will run
+        console.log('finishing');
+
+        function buzzer() {
+            console.log('hiiiiii');
+        }
+
+        //  setInterval(buzzer,2000)    // it run hii at every 2 sec
+
+        function destroy() {
+            document.body.innerHTML = `<p> Destroyed </p>`
+        }
+
+        const bombtimer = setTimeout(destroy, 3000)
+        window.addEventListener('click', function () {
+            console.log('you save it');
+
+            clearTimeout(bombtimer);
+
+        })
+    </script>
+
+</body>
+
+</html>

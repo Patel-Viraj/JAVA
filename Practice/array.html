@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const names = ['wes', 'kiat', 'snikers'];   //type of names is "object"
+
+        console.log(names.length);
+        console.log();
+
+        names.push('vir');
+        const name2 = [...names, 'pat'];
+        console.log(name2);
+        //add name in first place
+        names.unshift('lux')
+        console.log(names);
+
+        const name3 = ['asd', ...names]
+        console.log(name3);
+
+        const kaitindex = names.findIndex(name => name === 'kiat');
+
+        const newname = [
+            ...names.slice(0, kaitindex),
+            ...names.slice(kaitindex + 1)
+        ]
+        console.log(newname);
+
+
+
+        //mutation number
+        const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+        // numbers.reverse();
+        console.log(numbers);
+
+        numbers.splice(3, 2);      // in this start from number 3 and after 3  , 2 number are removed
+        console.log(numbers);      // in this after 3 so 4,5 are removed
+
+
+        //we need to take acopy of  array
+        const num = [...numbers].reverse();
+        console.log(num);                          // it show the reversed array
+        //number.reversed
+        console.log(numbers);                      // it show the orignal array
+
+
+        //immutable
+        const pizza = numbers.slice(2, 4);          // it means start from index 2 and stop at number 4 
+        console.log(pizza);
+
+    </script>
+
+</body>
+
+</html>

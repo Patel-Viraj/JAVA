@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <script>
+
+    // Grab all the text from web site
+    //Count how many times each letter is occurs
+
+    const text = `
+                 
+           1.1 Basic Concepts
+
+•	Cryptography The art or science encompassing the principles and methods of transforming an  intelligible
+ message into one that is unintelligible, and then retransforming that message back to it original form
+
+•	Plaintext The original intelligible message
+
+•	Cipher text The transformed message
+
+•	Cipher An algorithm for transforming an intelligible message into one that is unintelligible by
+  transposition and/or substitution methods
+
+•	Key Some critical information used by the cipher, known only to the sender& receiver
+
+•	Encipher (encode) The process of converting plaintext to cipher text using a cipher and a key
+
+•	Decipher (decode) the process of converting cipher text back into plaintext using a cipher and a key
+
+•	Cryptanalysis The study of principles and methods of transforming an unintelligible message back into an 
+       intelligible message without knowledge of the key. Also called code breaking
+
+•	Cryptology Both cryptography and cryptanalysis
+1.2 What is  Cryptography?
+Cryptography  is  derived from  the Greek words: kryptos, “hidden”, and  graphing “to write” or
+“Hidden writing”. People who  study  and  develop cryptography are called  cryptographers. The study of
+  how to circumvent the use of cryptography for unintended recipients is called cryptanalysis, or code breaking.
+   Cryptography and cryptanalysis are sometimes grouped together under  the  umbrella term cryptology.
+
+Cryptography is the science of using mathematics to encrypt and decrypt data. Cryptography enables you to 
+store sensitive information or transmit it across  insecure networks (like the Internet) so that it cannot
+ be read by anyone except the intended recipient. While cryptography is the science of securing data,
+  cryptanalysis is the science of analyzing and breaking secure communication. Classical cryptanalysis 
+  involves an interesting combination of  analytical reasoning, application of  mathematical tools,
+   pattern finding, patience, determination, and luck. Cryptanalysts are also called attackers.
+Cryptology embraces both cryptography and cryptanalysis.
+
+However, there has been one central problem limiting widespread use of cryptography. That problem is
+ key management. In cryptographic systems, the term key refers to a numerical value used by an algorithm 
+ to alter information, making that information secure and visible only to individuals who have the
+  corresponding key to recover the information. Consequently, the term
+
+Key  management refers to the secure administration of keys to provide them to users
+Where  and  when they are required.
+
+1.3 Cryptography Techniques
+Cryptography is closely related to the disciplines of cryptology and cryptanalysis. It includes
+ techniques such as microdots, merging words with images, and other ways to hide information in
+  storage or transit. However, in today's computer-centric world, cryptography is most often associated 
+  with scrambling plaintext (ordinary text, sometimes referred to as clear text) into cipher text 
+  (a process called encryption), then back again (known as decryption). Individuals who practice this 
+  field are known as cryptographers.
+Modern cryptography concerns itself with the following four objectives:
+1.	Confidentiality: the information cannot be understood by anyone for whom it was unintended
+2.	Integrity: the information cannot be altered in storage or transit between sender and intended 
+receiver without the alteration being detected
+3.	Non-repudiation: the creator/sender of the information cannot deny at a later stage his or her intentions
+ in the creation or transmission of the information
+4.	Authentication: the sender and receiver can confirm each other's identity and the origin/destination 
+of the information
+Procedures and protocols that meet some or all of the above criteria are known as cryptosystems. Cryptosystems 
+are often thought to refer only to mathematical procedures and computer programs; however, they also include
+ the regulation of human behavior, such as choosing hard-to-guess passwords, logging off unused systems, and
+  not discussing sensitive procedures with outsiders.
+1.4 Cryptographic Algorithms
+Cryptosystems use a set of procedures known as cryptographic algorithms, or ciphers, to encrypt and decrypt
+ messages to secure communications among computer systems, devices such as smart phones, and applications.
+  A cipher suite uses one algorithm for encryption, another algorithm for message authentication and another
+   for key exchange. This process, embedded in protocols and written in software that runs on operating 
+   systems and networked computer systems, involves public and private key generation for data
+    encryption/decryption, digital signing and verification for message authentication, and key exchange.
+1.5 Types of Cryptography
+Single-key or symmetric-key encryption algorithms create a fixed length of bits known as a block cipher 
+with a secret key that the creator/sender uses to encipher data (encryption) and the receiver uses to
+ decipher it. Types of symmetric-key cryptography include the Advanced Encryption Standard (AES), a 
+ specification established in November 2001 by the National Institute of Standards and Technology as a
+  Federal Information Processing Standard (FIPS 197), to protect sensitive information. The standard is
+   mandated by the U.S. government and widely used in the private sector.
+In June 2003, AES was approved by the U.S. government for classified information. It is a royalty-free 
+specification implemented in software and hardware worldwide. AES is the successor to the Data Encryption 
+Standard (DES) and DES3. It uses longer key lengths (128-bit, 192-bit, 256-bit) to prevent brute force and 
+other attacks.
+Public-key or asymmetric-key encryption algorithms use a pair of keys, a public key associated with the
+ creator/sender for encrypting messages and a private key that only the originator knows (unless it is 
+ exposed or they decide to share it) for decrypting that information. The types of public-key cryptography 
+ include RSA, used widely on the internet; Elliptic Curve Digital Signature Algorithm (ECDSA) used by Bit
+  coin ; Digital Signature Algorithm (DSA) adopted as a Federal Information Processing Standard for digital 
+  signatures by NIST in FIPS 186-4; and Daffier-Hellman key exchange. To maintain data integrity in
+   cryptography, hash functions, which return a deterministic output from an input value, are used to
+    map data to a fixed data size. Types of cryptographic hash functions include SHA-1 (Secure Hash
+     Algorithm 1), SHA-2 and SHA-3.
+1.6 How Does Cryptography Work?
+
+A cryptographic algorithm, or cipher, is a mathematical function used in the encryption and decryption 
+process. A cryptographic algorithm works in combination with a key—a word, number, or phrase—to encrypt
+ the plaintext. The same plaintext encrypts to different cipher text with different keys. The security
+  of encrypted data is entirely dependent on two things: the 
+strength of  the cryptographic algorithm and the secrecy of the key.  A cryptographic algorithm, plus
+ all possible keys and all the protocols that make it work comprise a cryptosystem.
+
+
+2. What  is Plaintext?
+
+2.1  Introduction
+
+In  the  study  of  cryptography  the terms  plaintext  and  cipher text  are  used  to  describe  
+the  plain  language  message  or  information  and  the  resulting  encrypted  message. Plaintext 
+ is  the  term  used  to  refer  to  the  information  in plain  language  that  the  sender  desires
+   to  send  to  one  or  more  receiving  computers  or  individuals.
+
+Also  referred  to  as  clear text, plaintext  is  commonly  referred  to  as  the  input  to  a cipher
+  or  encryption  algorithm. In  cryptography  circles, plaintext  is  commonly  used  as  the  input 
+   to  a cipher  or  encryption  algorithm. The  output  of  these  cipher’s  is  normally  referred  
+   to  as  cipher text.
+
+ Clear text usually refers to data that is transmitted or stored unencrypted ('in the clear').  Code 
+ text is less often used, and almost always only when the algorithm involved is actually a               
+       code. Some systems use multiple layers of encryption, with the output of one encryption algorithm 
+       becoming "plaintext" input for the next.
+    
+           `;
+
+
+    function isvalidchar(char) {
+      return char.match(/[a-z0-9]/);
+    }
+
+    const lowercase = char => char.toLowerCase();
+
+    function instantcounter(counts, char) {
+
+      counts[char]
+        //if true 
+        ? counts[char] = counts[char] + 1
+        //else false
+        : counts[char] = 1;
+      return counts;
+    }
+
+    const result = text
+      .split('')              // split each other into an item of an array
+      .filter(isvalidchar)
+      .map(lowercase)      //convert every letter to lowercase     
+      .reduce(instantcounter, {})
+    console.log(result);
+
+
+    function sortedvalue(a, b) {
+      return a[1] - b[1];
+    }
+
+    const sortresult = Object.entries(result)
+      .sort(sortedvalue);
+
+    console.log(sortresult);
+
+  </script>
+
+</body>
+
+</html>

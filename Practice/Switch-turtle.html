@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Switch case</title>
+</head>
+
+<body>
+    <img width="150" src="./download.png" alt="turt" class="turt" style="color: red;">
+    <style>
+        .turt {
+            position: relative;
+            --x: 0;
+            --y: 0;
+            transform: translateX(var(--x)) translateY(var(--y));
+
+        }
+    </style>
+    <script>
+        const turtle = document.querySelector('.turt');
+        let x = 0;
+        let y = 0;
+        function handlekeydown(event) {
+            console.log(event.key);
+
+            turtle.style['border'] = `10px solid yellow`;
+            if (!event.key.includes('Arrow')) { return; }
+            switch (event.key) {
+                case 'ArrowUp':
+                    y = y - 1;
+                    break;
+                case 'ArrowDown':
+                    y = y + 1
+                    break;
+                case 'ArrowLeft':
+                    x = x - 1
+                    break;
+                case 'ArrowRight':
+                    x = x + 1
+                    break;
+                default:
+                    console.log('not a arrow');
+                    break;
+            }
+            turtle.setAttribute('style', `--x : ${x}px`);
+            turtle.setAttribute('style', `--y : ${y}px`);
+        }
+        window.addEventListener('keydown', handlekeydown);
+
+
+
+    </script>
+
+
+</body>
+
+</html>

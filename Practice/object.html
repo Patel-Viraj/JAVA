@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <input class="asd" type="text" name="first" value="viraj">
+    <script>
+        const age = 100;
+        const wes = {
+            age,
+            name: 'viraj',
+            property: 'never',
+            really_cool: true,
+            '777': true,
+            cloth: {
+                shirt: 10,
+                tshirt: 2
+            },
+            sayhello: function (greeting = 'hey') {
+                console.log(`${greeting} ${this.name}`);
+            }
+        }
+        wes.job = 'web';
+        console.log(wes.job);
+        console.log(wes['job']);
+        console.log(`${wes.job}`);
+
+        // const property = prompt('what you want');
+        // console.log(property);
+        // console.log(wes[property]);
+
+        const name = document.querySelector('.asd');
+
+        const a = name ? name.value : '';
+        console.log(a);
+
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+        const person1 = {
+            first: 'viraj',
+            last: 'patel',         // even though both have same value but it is not same
+            // person1 === person2 is false
+        }
+        const person2 = {
+            first: 'viraj',
+            last: 'patel'
+        }
+
+
+        /////////////////////////////////////////   
+        ///    const person3 = person1;       ///
+        ///    person3.first = 'raj';         ///              person1 name whould we change to raj 
+        ///    console.log(person1, person3); ///
+        /////////////////////////////////////////
+
+        //to overcome this problem 
+
+        const person3 = { ...person1 };
+        person3.first = 'raj';
+
+    </script>
+
+</body>
+
+</html>
